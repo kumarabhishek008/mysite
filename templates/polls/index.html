@@ -1,0 +1,15 @@
+{% extends "polls/base.html" %}
+{% block content %}
+<h2>Publishers</h2>
+<ul>
+{% for publisher in book %}
+    <li><a href="{% url 'polls:detail' publisher.publisher.id %}">{{ publisher.publisher.name }}</a></li>
+{% endfor %}
+</ul>
+<h2>Books</h2>
+<ul>
+{% for books in book %}
+    <li><a href="{% url 'polls:detail' books.id %}">{{ books.title }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
